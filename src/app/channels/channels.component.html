@@ -1,0 +1,20 @@
+<p>channel works!</p>
+
+<!-- creating routerLink dynamically based on the amount of channelNames in the array in the service -->
+<a *ngFor="let tempCh of dataService.dataArray; let i = index"
+  routerLink="/channels/{{tempCh.channelName}}">
+  <div (click)="selectedChannel(i)">{{tempCh.channelName}}</div>
+</a>
+
+
+<!-- displaying messages to see if messages change based on channel clicked -->
+<div *ngFor="let tempMsg of displayMessages">
+    {{tempMsg.username}}: {{tempMsg.messageText}}
+</div>
+
+
+<!-- just testing routerLink with navigation for now. -->
+<!-- <nav>
+    <a routerLink="/chat">Chat</a>
+</nav>
+<router-outlet></router-outlet> -->
