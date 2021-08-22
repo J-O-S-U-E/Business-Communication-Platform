@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Message } from '../message';
 
 import { UserDataService } from '../user-data.service';
 
@@ -10,6 +11,12 @@ import { UserDataService } from '../user-data.service';
 })
 export class ChannelsComponent implements OnInit {
 
+  currentUsername: string = "Default Username";
+  currentUserAvatarURL: string = "../assets/Luffy.jpg" //not working with default picture
+  currentIsEdited: boolean = false;
+
+  currentDate = Date.now();
+
   displayMessages: any[] = [];
 
   constructor(public dataService: UserDataService) { }
@@ -20,6 +27,10 @@ export class ChannelsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  saveMsg(tmpMsg: Message) {
+    this.displayMessages.push(tmpMsg)
   }
 
 }

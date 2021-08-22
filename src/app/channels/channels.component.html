@@ -13,6 +13,16 @@
 </div>
 
 
+<!-- did a simple copy paste from chat componenet. now chat componenet has its own seperate information. I need to either make chat component work with channel component or remove chat componenent and have channels component deal with the chat part like it is doing now. -->
+<input
+#message
+(keyup.enter)="saveMsg({username: currentUsername, avatarURL: currentUserAvatarURL, messageText: message.value, dateTime: this.currentDate, edited: currentIsEdited}); message.value='' ">
+<p *ngFor="let userMessage of displayMessages">
+    <img class="avatars" src={{userMessage.avatarURL}}>
+     {{userMessage.username}}: {{userMessage.dateTime | date: 'medium'}}: {{userMessage.messageText}}
+</p>
+
+
 <!-- just testing routerLink with navigation for now. -->
 <!-- <nav>
     <a routerLink="/chat">Chat</a>
