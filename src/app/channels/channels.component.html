@@ -1,30 +1,42 @@
-<p>channel works!</p>
 
 <!-- creating routerLink dynamically based on the amount of channelNames in the array in the service -->
-<a *ngFor="let tempCh of dataService.dataArray; let i = index"
+<!-- <a *ngFor="let tempCh of dataService.dataArray; let i = index"
   routerLink="/channels/{{tempCh.channelName}}">
   <div (click)="selectedChannel(i)">{{tempCh.channelName}}</div>
-</a>
+</a> -->
 
+<div class="container-fluid ">
+    <div class="row h-100"> 
+        <div id="navigation-col" class="col-4 col-md-3">
+            <div id="navigation-items">
+                <h3>Channels</h3>
+                    <a *ngFor="let tempCh of dataService.dataArray; let i = index">
+                        <div (click)="selectedChannel(i)" class="pl-3 pt-2 pb-2 pr-2 m-0 navigation-item">{{tempCh.channelName}}</div>
+                    </a>
+            </div>
+        </div>
 
-<!-- displaying messages to see if messages change based on channel clicked -->
-<div *ngFor="let tempMsg of displayMessages">
-    {{tempMsg.username}}: {{tempMsg.messageText}}
+        
+        <div class="col-8 col-md-9 chat-container">
+            <h3>Business Communication Platform</h3>
+            <input class="form-control" placeholder="Enter your message here" #message (keyup.enter)="saveMsg({username: currentUsername, avatarURL: currentUserAvatarURL, messageText: message.value, dateTime: this.currentDate, edited: currentIsEdited}); message.value='' ">
+                <div *ngFor="let userMessage of displayMessages" class="chat-messages">
+                    <div class="row mt-3">
+                        <div class="col col-avatar ml-3">
+                            <img class="avatars" src={{userMessage.avatarURL}}>
+                        </div>
+                        <div class="col">
+                            <div class="col">
+                                <h5>{{userMessage.username}}:</h5>
+                            </div>
+                            <div class="col">
+                                <p>{{userMessage.dateTime | date: 'medium'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="ml-3">{{userMessage.messageText}}</p>
+                </div>
+        </div>
+    </div>
+    
 </div>
-
-
-<!-- did a simple copy paste from chat componenet. now chat componenet has its own seperate information. I need to either make chat component work with channel component or remove chat componenent and have channels component deal with the chat part like it is doing now. -->
-<input
-#message
-(keyup.enter)="saveMsg({username: currentUsername, avatarURL: currentUserAvatarURL, messageText: message.value, dateTime: this.currentDate, edited: currentIsEdited}); message.value='' ">
-<p *ngFor="let userMessage of displayMessages">
-    <img class="avatars" src={{userMessage.avatarURL}}>
-     {{userMessage.username}}: {{userMessage.dateTime | date: 'medium'}}: {{userMessage.messageText}}
-</p>
-
-
-<!-- just testing routerLink with navigation for now. -->
-<!-- <nav>
-    <a routerLink="/chat">Chat</a>
-</nav>
-<router-outlet></router-outlet> -->

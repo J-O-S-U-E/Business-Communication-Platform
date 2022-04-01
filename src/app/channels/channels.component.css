@@ -1,0 +1,34 @@
+.container-fluid {
+  height: 100vh;
+}
+#navigation-col {
+  padding-top: 35px;
+  background-color: #dce7ef;
+}
+
+.navigation-item:hover {
+  background-color: #c7d2dc;
+  border-radius: 5px;
+}
+
+.chat-container {
+  padding-top: 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.col-avatar {
+  flex: 50px 0 0;
+  width: 50px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.chat-messages {
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  margin-top: 15px;
+  background-color: #f6f8f9;
+}
