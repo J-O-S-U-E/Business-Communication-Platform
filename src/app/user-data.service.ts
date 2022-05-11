@@ -42,13 +42,13 @@ export class UserDataService {
         { username: "Michael Scott", 
         avatarURL: "assets/images/Michael-Scott.png", 
         messageText: "This is random chat for random conversations.",
-        dateTime: "2022-05-10T23:17:20.808Z",
+        dateTime: "2022-05-09T21:15:20.808Z",
         edited: true },
     
         { username: "Dwight Schrute", 
         avatarURL: "assets/images/Dwight-Schrute.png",
         messageText: "Beets. Battlestar Galactica.",
-        dateTime: "2022-05-10T23:17:50.808Z",
+        dateTime: "2022-05-09T21:15:50.808Z",
         edited: true }
       ]
     },
@@ -58,13 +58,13 @@ export class UserDataService {
         { username: "Michael Scott", 
         avatarURL: "assets/images/Michael-Scott.png", 
         messageText: "Conference room in 10 minutes.",
-        dateTime: "2022-05-10T23:17:20.808Z",
+        dateTime: "2022-05-10T22:15:22.808Z",
         edited: true },
     
         { username: "Stanley Hudson", 
         avatarURL: "assets/images/Stanley-Hudson.png",
         messageText: "I have a customer meeting in 30 minutes.",
-        dateTime: "2022-05-10T23:19:28.808Z",
+        dateTime: "2022-05-10T22:15:40.808Z",
         edited: true }
       ]
     }
