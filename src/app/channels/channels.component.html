@@ -18,7 +18,7 @@
 
         
         <div class="col-8 col-md-9 chat-container">
-            <h3>Business Communication Platform</h3>
+            <h3>Text Communication Platform</h3>
             <input class="form-control" placeholder="Enter your message here" #message (keyup.enter)="saveMsg({username: currentUsername, avatarURL: currentUserAvatarURL, messageText: message.value, dateTime: this.currentDate, edited: currentIsEdited}); message.value='' ">
                 <div *ngFor="let userMessage of displayMessages" class="chat-messages">
                     <div class="row mt-3">
