@@ -1,6 +1,6 @@
 # Text Communication Platform
 
-A simple platform for users to communicate via text.
+A platform for users to communicate via text.
 
 ## Use case
 
