@@ -11,8 +11,8 @@ import { UserDataService } from '../user-data.service';
 })
 export class ChannelsComponent implements OnInit {
 
-  currentUsername: string = "Default Username";
-  currentUserAvatarURL: string = "../assets/Luffy.jpg" //not working with default picture
+  currentUsername: string = "Pam Beesly";
+  currentUserAvatarURL: string = "../assets/images/Pam-Beesly.png"
   currentIsEdited: boolean = false;
 
   currentDate = Date.now();
@@ -22,7 +22,7 @@ export class ChannelsComponent implements OnInit {
   constructor(public dataService: UserDataService) { }
 
   selectedChannel(channelIndex: number) {
-    const tempData = this.dataService.dataArray; //right now accessing array directly. might want to createa a function that returns the array instead.
+    const tempData = this.dataService.dataArray;
     this.displayMessages = tempData[channelIndex].messages;
   }
 
